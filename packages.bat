@@ -1,3 +1,3 @@
 @echo off
-pip install PyQt5 whois GPUtil screeninfo
+pip install fade os datetime time colorama requests selenium bs4 socket pystyle ipaddress ping3 subprocess threading random
 python main.py
