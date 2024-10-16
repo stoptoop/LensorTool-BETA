@@ -8,14 +8,17 @@ from selenium import webdriver
 import sys
 from bs4 import BeautifulSoup
 import socket
-import concurrent.futures
 from pystyle import Colors, Colorate
 import ipaddress
 from ping3 import ping
 import threading
 from colorama import Fore, Style
 
-TokensPath = "C:\\Users\\krens\\Desktop\\LensorTool\\TokenDisc.txt"
+
+
+
+TokensPath = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "Tokens.txt"))
+
 
 
 end = "\033[0m"
@@ -81,7 +84,7 @@ def banner():
          {colored_red_purple("[ 5 ] ~ ")}{white}{options[5]}    {colored_red_purple("[ 12 ] ~ ")}{white}{options[12]}          {colored_red_purple("[ 20 ] ~ ")}{white}{options[20]}	
          {colored_red_purple("[ 6 ] ~ ")}{white}{options[6]}              {colored_red_purple("[ 13 ] ~ ")}{white}{options[13]}          {colored_red_purple("[ 21 ] ~ ")}{white}{options[21]}
          {colored_red_purple("[ 7 ] ~ ")}{white}{options[7]}             {colored_red_purple("[ 14 ] ~ ")}{white}{options[14]}          {colored_red_purple("[ 22 ] ~ ")}{white}{options[22]}
-       {colored_red_purple(f"""└──────────────────────────────────────┬─────────────────┬──────────────────────────────────────┘
+       {colored_red_purple(f"""└──────────────────────────────────────┬─────────────────┬────────────────────────────────────┘
                                               │  [ 15 ] ~ {options[15]} │
                                               └─               ─┘""")}
 '''))
