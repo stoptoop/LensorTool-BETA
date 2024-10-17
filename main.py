@@ -8,7 +8,6 @@ import requests, random, subprocess, threading
 from selenium import webdriver
 import sys
 from bs4 import BeautifulSoup
-import socket
 from pystyle import Colors, Colorate
 import ipaddress
 from ping3 import ping
