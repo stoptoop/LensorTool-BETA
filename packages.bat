@@ -4,21 +4,11 @@ chcp 65001 > nul
 rem Проверка наличия Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo Python не установлен. Начинаем скачивание и установку...
+    echo Python не установлен. Открываю браузер для загрузки...
 
-    rem Скачиваем установщик Python
-    powershell -Command "Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe -OutFile python_installer.exe"
-
-    rem Устанавливаем Python тихо и добавляем в PATH
-    start /wait python_installer.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
-
-    rem Проверка установки Python
-    python --version >nul 2>&1
-    if errorlevel 1 (
-        echo Ошибка: Python не установлен. Пожалуйста, установите его вручную.
-        pause
-        exit /b
-    )
+    rem Открываем ссылку в браузере
+    start https://www.python.org/downloads/release/python-3120/
+    exit /b
 ) else (
     echo Python уже установлен.
 )
@@ -45,4 +35,3 @@ pause
 
 rem Запуск main.py
 python main.py
-

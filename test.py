@@ -7,33 +7,6 @@ from Utils.config import *
 
 
 
-
-import subprocess
-import sys
-
-# Список модулей для проверки
-modules = [
-    "fade", "os", "datetime", "time", "colorama", "requests", 
-    "random", "subprocess", "threading", "selenium", 
-    "sys", "bs4", "pystyle", "ipaddress", "ping3"
-]
-
-# Функция для проверки модуля
-def check_module(module_name):
-    try:
-        __import__(module_name)
-        print(f"Модуль '{module_name}' установлен.")
-    except ImportError:
-        print(f"Модуль '{module_name}' не установлен. Пытаюсь установить...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", module_name])
-        print(f"Модуль '{module_name}' успешно установлен.")
-
-# Проходим по списку модулей и проверяем каждый
-for module in modules:
-    check_module(module)
-
-
-
 # try:
 #     token = Choice1TokenDiscord()
 #     r = requests.get('https://discord.com/api/v8/users/@me', headers={'Authorization': token, 'Content-Type': 'application/json'})
